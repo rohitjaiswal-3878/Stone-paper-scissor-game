@@ -6,6 +6,21 @@ let gameObject = {
 };
 let userChoice = document.getElementsByClassName("play-game-user");
 
+let compScore = document.querySelector(".computer-score .score-count");
+let usrScore = document.querySelector(".your-score .score-count");
+if (
+  localStorage.getItem("computerScore") &&
+  localStorage.getItem("userScore")
+) {
+  compScore.innerText = localStorage.getItem("computerScore");
+  usrScore.innerText = localStorage.getItem("userScore");
+} else {
+  localStorage.setItem("computerScore", "0");
+  localStorage.setItem("userScore", "0");
+  compScore.innerText = localStorage.getItem("computerScore");
+  usrScore.innerText = localStorage.getItem("userScore");
+}
+
 Object.values(userChoice).forEach((element) => {
   element.addEventListener("click", () => {
     let computerChoice = Math.floor(Math.random() * 3);
@@ -21,8 +36,8 @@ Object.values(userChoice).forEach((element) => {
       (userSel === "scissor" && game[computerChoice] === "paper")
     ) {
       // Updating score borad of user.
-      let userScore = document.querySelector(".your-score .score-count");
-      userScore.innerText = Number(userScore.innerHTML) + 1;
+      usrScore.innerText = Number(usrScore.innerHTML) + 1;
+      localStorage.setItem("userScore", usrScore.innerText);
 
       // Getting result section
       let resultSection = document.querySelector(".result-section");
@@ -105,10 +120,8 @@ Object.values(userChoice).forEach((element) => {
       rulesBtn.style.right = "";
     } else {
       // Updating score borad of computer.
-      let computerScore = document.querySelector(
-        ".computer-score .score-count"
-      );
-      computerScore.innerText = Number(computerScore.innerHTML) + 1;
+      compScore.innerText = Number(compScore.innerHTML) + 1;
+      localStorage.setItem("computerScore", compScore.innerText);
 
       // Getting result section
       let resultSection = document.querySelector(".result-section");
