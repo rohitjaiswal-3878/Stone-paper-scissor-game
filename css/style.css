@@ -1,0 +1,411 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #8cc461;
+}
+
+.score-board {
+  position: relative;
+  width: 60%;
+  height: 140px;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 70px auto;
+  display: flex;
+  padding: 10px;
+}
+.score-board h1 {
+  font-size: 28px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.computer-score,
+.your-score {
+  background-color: white;
+  width: 114px;
+  height: 114px;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.score-heading {
+  display: block;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #656565;
+  letter-spacing: 1.5px;
+}
+
+.score-count {
+  display: inline-block;
+  font-size: 60px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #252525;
+  margin-top: -15px;
+}
+
+.computer-score {
+  position: absolute;
+  right: 150px;
+}
+.your-score {
+  position: absolute;
+  right: 10px;
+}
+
+.play-game {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 30px;
+  width: 400px;
+  height: 400px;
+}
+
+.stone,
+.paper,
+.scissor {
+  display: inline-block;
+  border-width: 15px;
+  border-style: solid;
+  border-radius: 50%;
+  height: 25%;
+  width: 25%;
+  background: #ffffff;
+}
+.stone > img {
+  display: block;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  margin: 7px auto;
+}
+
+.scissor > img {
+  display: block;
+  width: 55%;
+  height: 55%;
+  object-fit: contain;
+  margin: 15px auto;
+}
+
+.paper > img {
+  display: block;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  margin: 12px auto;
+}
+
+.stone {
+  border-color: #0074b6;
+  position: absolute;
+  left: 50px;
+  top: 70px;
+}
+.scissor {
+  border-color: #bd00ff;
+  position: absolute;
+  right: 50px;
+  top: 70px;
+}
+
+.paper {
+  border-color: #ffa943;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 60px;
+}
+.line {
+  width: 200px;
+  height: 13px;
+  background-color: #000000a3;
+  display: inline-block;
+}
+.line-1 {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+}
+
+.line-2 {
+  position: absolute;
+  transform: rotate(60deg);
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: -1;
+}
+.line-3 {
+  position: absolute;
+  transform: rotate(-60deg);
+  top: 0;
+  bottom: 0;
+  right: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  z-index: -1;
+}
+
+.rules {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  height: 425px;
+  width: 300px;
+}
+
+.rules-box {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 90%;
+}
+.rules-box .img-1 {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.rules-box .img-2 {
+  position: absolute;
+  right: -3.5px;
+  width: 21.5%;
+  top: -1px;
+  height: 25%;
+  object-fit: contain;
+}
+
+.btn-rules {
+  border: 2px solid white;
+  padding: 0 10px;
+  height: 35px;
+  width: 100px;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.btn-rules-2 {
+  display: none;
+}
+
+.result-section {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 30px;
+  width: 700px;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.result-section .user,
+.result-section .computer {
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  height: 60%;
+  width: 20%;
+  text-align: center;
+}
+
+.result-section .user div,
+.result-section .computer div {
+  display: block;
+  border-width: 15px;
+  border-style: solid;
+  border-radius: 50%;
+  border-color: black;
+  height: 60%;
+  width: 100%;
+  background: #ffffff;
+  margin: 30px auto;
+}
+.result-section .user div img,
+.result-section .computer div img {
+  margin-top: 23px;
+}
+
+.result-section .result-message {
+  color: white;
+  text-transform: uppercase;
+}
+
+.result-section .result-message .btn-play-again {
+  width: 100%;
+  height: 33px;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b6b6b;
+  margin-top: 15px;
+}
+
+.hurry-section {
+  visibility: hidden;
+  position: absolute;
+  height: 90%;
+  width: 40%;
+  top: 35px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hurry-section .medal-star {
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.hurry-section .medal-star img {
+  display: inline-block;
+  position: absolute;
+}
+
+.hurry-section .medal-star .medal {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 38%;
+  height: 55%;
+  object-fit: contain;
+}
+
+.hurry-section .medal-star .star-1 {
+  bottom: 10px;
+  width: 25px;
+  height: 25px;
+  left: 20%;
+}
+.hurry-section .medal-star .star-2 {
+  left: 25px;
+  width: 90px;
+  height: 90px;
+  top: 50%;
+}
+
+.hurry-section .medal-star .star-3 {
+  left: 15%;
+  width: 50px;
+  height: 50px;
+  top: 30%;
+}
+
+.hurry-section .medal-star .star-4 {
+  top: 10%;
+  width: 25px;
+  height: 25px;
+  left: 22%;
+}
+
+.hurry-section .medal-star .star-5 {
+  top: 25%;
+  width: 25px;
+  height: 25px;
+  left: 44%;
+}
+
+.hurry-section .medal-star .star-6 {
+  right: 25%;
+  width: 90px;
+  height: 90px;
+  top: 12%;
+}
+
+.hurry-section .medal-star .star-7 {
+  top: 40%;
+  width: 25px;
+  height: 25px;
+  right: 5%;
+}
+
+.hurry-section .medal-star .star-8 {
+  right: 10%;
+  width: 110px;
+  height: 110px;
+  bottom: 5%;
+}
+
+.hurry-message h1 {
+  font-size: 80px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+.hurry-message h2 {
+  font-size: 35px;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.btn-play-again-2 {
+  width: 30%;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b6b6b;
+  margin-top: 40px;
+}
+
+@keyframes mymove {
+  50% {
+    box-shadow: 0 0 80px 45px #299d1e;
+  }
+}

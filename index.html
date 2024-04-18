@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stone paper scissor</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="score-board">
+      <h1>Rock<br />Paper<br />Scissors</h1>
+      <div class="computer-score">
+        <span class="score-heading">Computer score</span>
+        <span class="score-count">0</span>
+      </div>
+      <div class="your-score">
+        <span class="score-heading">Your score</span>
+        <span class="score-count">0</span>
+      </div>
+    </div>
+
+    <div class="play-game">
+      <div class="play-game-user stone" data-value="stone">
+        <img src="images/stone.png" alt="" />
+      </div>
+      <div class="line line-1"></div>
+      <div class="play-game-user scissor" data-value="scissor">
+        <img src="images/scissor.png" alt="" />
+      </div>
+      <div class="line line-2"></div>
+      <div class="play-game-user paper" data-value="paper">
+        <img src="images/paper.png" alt="" />
+      </div>
+      <div class="line line-3"></div>
+    </div>
+
+    <div class="result-section">
+      <div class="user">
+        <span>You picked</span>
+        <div>
+          <img src="" alt="" />
+        </div>
+      </div>
+
+      <div class="result-message">
+        <h1>You Win</h1>
+        <h2>Against PC</h2>
+        <button class="btn-play-again">Play again</button>
+      </div>
+
+      <div class="computer">
+        <span>Pc picked</span>
+        <div>
+          <img src="" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hurry-section">
+      <div class="medal-star">
+        <img src="images/star.png" alt="" class="star-1" />
+        <img src="images/star.png" alt="" class="star-2" />
+        <img src="images/star.png" alt="" class="star-3" />
+        <img src="images/star.png" alt="" class="star-4" />
+        <img src="images/star.png" alt="" class="star-5" />
+        <img src="images/star.png" alt="" class="star-6" />
+        <img src="images/star.png" alt="" class="star-7" />
+        <img src="images/star.png" alt="" class="star-8" />
+        <img src="images/medal.png" alt="" class="medal" />
+      </div>
+      <div class="hurry-message">
+        <h1>HURRAY!!</h1>
+        <h2>YOU WON THE GAME</h2>
+      </div>
+
+      <button class="btn-play-again-2">play again</button>
+    </div>
+
+    <div class="rules">
+      <div class="rules-container">
+        <div class="rules-box">
+          <img src="images/Rules.png" alt="rules" class="img-1" />
+          <img src="images/cross.png" alt="cross" class="img-2" />
+        </div>
+        <button class="btn-rules btn-rules-1">Rules</button>
+        <button class="btn-rules btn-rules-2">Next</button>
+      </div>
+    </div>
+
+    <script src="javascript/logic.js"></script>
+  </body>
+</html>
